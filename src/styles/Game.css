@@ -1,0 +1,150 @@
+.main-container{
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+}
+
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  width: 100svw;
+  background: linear-gradient(135deg, #001122, #003366); 
+  color: white;
+  min-height: 100vh; 
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  background-color: #48525ba8; /* Solid blue background */
+  color: white; /* White text */
+}
+
+.tile.correct {
+  background-color: #6aaa64; /* Keep green for correct, as it's standard */
+  color: white;
+  border-color: #6aaa64;
+}
+
+.tile.present {
+  background-color: #c9b458; /* Keep yellow for present */
+  color: white;
+  border-color: #c9b458;
+}
+
+.tile.absent {
+  background-color: #787c7e; /* Keep gray for absent */
+  color: white;
+  border-color: #787c7e;
+}
+
+.keyboard {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 5px;
+}
+
+
+
+.key {
+  width: 40px;
+  height: 50px;
+  background-color: #48525ba8; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  color: white; 
+  border-radius: 10px;
+}
+
+.key:hover:not(:disabled) {
+  background-color: #023d78; 
+}
+
+.key.correct {
+  background-color: #6aaa64; 
+  border-color: #6aaa64;
+}
+
+.key.present {
+  background-color: #c9b458; /* Keep yellow */
+
+  border-color: #c9b458;
+}
+
+.key.absent {
+  background-color: #272727; /* Keep gray */
+  border-color: #232323;
+}
+
+.key.special {
+  width: 60px; /* Wider for Enter and Backspace */
+}
+
+.key:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: white; /* Ensure disabled text is white */
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white; 
+}
+
+
+.enter-container {
+    width: 100vw;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enter-button {
+    padding: 25px 60px;
+    background-color: white;
+    color: green;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}

@@ -1,42 +1,103 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.valentines-container {
+  position: relative;
+  width: 100svw;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 6s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.heart:nth-child(odd) {
+  left: 10%;
+  animation-duration: 7s;
+}
+
+.heart:nth-child(even) {
+  right: 10%;
+  animation-duration: 8s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.content {
   text-align: center;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.greeting {
+  font-size: 3rem;
+  animation: pulse 2s infinite;
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.05);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  100% {
+    transform: scale(1);
   }
 }
 
-.card {
-  padding: 2em;
+.message {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
 }
 
-.read-the-docs {
-  color: #888;
+.love-button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.love-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
 }
