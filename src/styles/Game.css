@@ -2,8 +2,13 @@
     width: 100svw;
     height: 100svh;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
+.header{
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
 
 .game {
   display: flex;
@@ -15,18 +20,21 @@
   background: linear-gradient(135deg, #001122, #003366); 
   color: white;
   min-height: 100vh; 
+  transition: all 0.3s ease;
 }
 
 .board {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   margin: 20px 0;
+  transition: all 0.3s ease;
 }
 
 .row {
   display: flex;
-  gap: 5px;
+  gap: 10px;
+  transition: all 0.3s ease;
 }
 
 .tile {
@@ -39,9 +47,15 @@
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  background-color: #48525ba8; /* Solid blue background */
-  color: white; /* White text */
+  transition: all 0.3s ease;
+
+  background-color: #48525ba8;
+  color: white;
+
+  /* 3D Effect */
+  box-shadow: 
+    4px 4px 0px #2c3338,        /* Hard bottom-right shadow */
+    6px 6px 12px rgba(0,0,0,0.4); /* Soft depth shadow */
 }
 
 .tile.correct {
@@ -68,14 +82,14 @@
   flex-direction: column;
   gap: 5px;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .keyboard-row {
   display: flex;
   gap: 5px;
+  transition: all 0.3s ease;
 }
-
-
 
 .key {
   width: 40px;
@@ -87,14 +101,23 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
-  color: white; 
+  transition: all 0.3s ease;
   border-radius: 10px;
+  color: white;
+
+  /* 3D effect */
+  box-shadow:
+    3px 3px 0px #2c3338,
+    6px 6px 10px rgba(0,0,0,0.4);
 }
 
 .key:hover:not(:disabled) {
   background-color: #023d78; 
+}
+
+.key:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: none;
 }
 
 .key.correct {
@@ -104,7 +127,6 @@
 
 .key.present {
   background-color: #c9b458; /* Keep yellow */
-
   border-color: #c9b458;
 }
 
@@ -113,8 +135,50 @@
   border-color: #232323;
 }
 
+.reveal-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.per-tile{
+  background-color: rgb(126, 28, 28);
+  transition: all 0.3s ease;
+  animation: flip 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
 .key.special {
-  width: 60px; /* Wider for Enter and Backspace */
+  width: 60px;
+  box-shadow:
+    4px 4px 0px #2c3338,
+    8px 8px 14px rgba(0,0,0,0.5);
 }
 
 .key:disabled {
@@ -128,8 +192,8 @@
   font-size: 18px;
   font-weight: bold;
   color: white; 
+  transition: all 0.3s ease;
 }
-
 
 .enter-container {
     width: 100vw;
@@ -137,14 +201,47 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .enter-button {
-    padding: 25px 60px;
-    background-color: white;
-    color: green;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
+  padding: 25px 60px;
+  background: linear-gradient(135deg, #1e90ff, #0047ab);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover effect */
+.enter-button:hover {
+  background: linear-gradient(135deg, #3aa0ff, #003380);
+  transform: scale(1.05);
+}
+
+.game-over-btn {
+  padding: 25px 60px;
+  background: linear-gradient(135deg, #ff1e1e, #b30000);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover effect */
+.game-over-btn:hover {
+  background: linear-gradient(135deg, #ff3333, #800000);
+  transform: scale(1.05);
+}
+
+.game-over-container{
+  display: flex;
+  gap: 30px;
+  transition: all 0.3s ease;
 }

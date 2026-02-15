@@ -21,13 +21,13 @@ export default function ValentinesHome() {
         ))}
       </div>
       <div className="content">
-        <h1 className="greeting">Happy Valentine's Day, My Love!</h1>
+        <h1 className="greeting">Happy Valentine's Day, My Baby!</h1>
         <p className="message">
           You are the light of my life, the beat in my heart, and the reason I
           smile every day. I love you more than words can say. ❤️
         </p>
         <button className="love-button" onClick={handleProceed}>
-          Click for More Love
+          Click for More Baby
         </button>
       </div>
     </div>
