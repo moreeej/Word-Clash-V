@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Game.css";
 import emailjs from "@emailjs/browser";
 
-const WORD = "HEART";
+const WORD = "NIGGA";
 const MAX_GUESSES = 6;
 const WORD_LENGTH = 5;
 const MAX_QUESTION_GUESSES = 5;
