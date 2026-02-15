@@ -71,7 +71,7 @@ export default function Game() {
 
     if (currentQuestionGuess === QUESTION_WORD) {
       setQuestionSubmitted(true);
-      setMessage("Yes! Happy Valentine's Day! ❤️\ncheck your email babyyyy");
+      setMessage("Yes! Happy Valentine's Day! ❤️<br />check your email babyyyy");
       // Send email after YES
       sendEmail();
     } else if (newQuestionGuesses.length === MAX_QUESTION_GUESSES) {
