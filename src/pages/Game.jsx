@@ -9,6 +9,7 @@ const MAX_QUESTION_GUESSES = 5;
 const QUESTION_WORD = "YES";
 const QUESTION_LENGTH = 3;
 
+
 export default function Game() {
   const [guesses, setGuesses] = useState([]);
   const [currentGuess, setCurrentGuess] = useState("");
